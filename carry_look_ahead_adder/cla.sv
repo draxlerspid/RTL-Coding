@@ -1,13 +1,14 @@
 module cla(
 		output logic [3:0]s,
 		output logic cout,
+		output logic [2:0]c,
+		output logic [3:0]p,g,
 		input logic [3:0]a,b,
 		input logic cin
 
 		);
 
-		logic [2:0]c;
-		logic [3:0]p,g;
+
 
 		always_comb
 			begin 
