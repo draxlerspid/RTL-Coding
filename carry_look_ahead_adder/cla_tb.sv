@@ -8,7 +8,7 @@ module cla_tb();
 		logic [2:0]c;
 		logic [3:0]p,g;
 
-		cla uut(.s(s) , .cout(cout) , .a(a) , .b(b) , .cin(cin) );
+	cla uut(.s(s) , .cout(cout) , .a(a) , .b(b) , .cin(cin) .c(c) , .p(p) , .g(g) );
 		initial 
 			begin 
 				a=4'b0011;b=4'b1000;cin=0;#50;
