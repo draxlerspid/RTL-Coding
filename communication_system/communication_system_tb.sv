@@ -1,0 +1,33 @@
+`timescale 1ns / 1ps
+
+module simp_comm_sys_tb();
+    logic [3:0] message;
+    logic [1:0] sel;
+    logic [3:0] received_message;
+
+    // Instantiate the Device Under Test (DUT)
+    simp_comm_sys uut (
+        .message(message),
+        .sel(sel),
+        .received_message(received_message)
+    );
+
+    initial begin
+        
+        $monitor("Time=%0t | Message=%b Sel=%b => Received Message=%b", $time, message, sel, received_message);
+
+        
+        message = 4'b0001; sel = 2'b00; #10;
+        
+        
+        message = 4'b0010; sel = 2'b01; #10;
+        
+        
+        message = 4'b0100; sel = 2'b10; #10;
+        
+        
+        message = 4'b1000; sel = 2'b11; #10;
+
+        $finish;
+    end
+endmodule
